@@ -27,17 +27,17 @@ let initialTweets = [
     },
     "created_at": 1621291761026
   }
-]
+];
 
-const createTweetElement = function (tweetData) {
-  const tweetUser = tweetData["user"]
+const createTweetElement = function(tweetData) {
+  const tweetUser = tweetData["user"];
   const name = tweetUser["name"];
   const avatar = tweetUser["avatars"];
   const handle = tweetUser["handle"];
   const content = tweetData["content"]["text"];
   const date = timeago.format(tweetData["created_at"]);
 
-  let tweetHTML = 
+  let tweetHTML =
   `<article class="tweet">
     <header class="tweet-header">
       <div class="icon-name">
@@ -64,20 +64,20 @@ const createTweetElement = function (tweetData) {
     </footer>
   </article>`;
   return tweetHTML;
-}
+};
 
-const renderTweets = function (tweetData) {
-  for(let tweet of tweetData) {
+const renderTweets = function(tweetData) {
+  for (let tweet of tweetData) {
     $("#tweets-container").prepend(createTweetElement(tweet));
   }
-}
+};
 
-const loadTweets = function () {
+const loadTweets = function() {
   $.ajax("/tweets", {method: "GET"})
-  .then(function (tweets) {
-    renderTweets(tweets);
-  })
-}
+    .then(function(tweets) {
+      renderTweets(tweets);
+    });
+};
 
 $(document).ready(function() {
   $(".error").hide();
@@ -91,20 +91,19 @@ $(document).ready(function() {
     } else if (charLeft <= 0) {
       $(".errorMsg").text("please enter some text first!");
       $(".error").slideDown();
-    }
-      else {
+    } else {
       $.post("/tweets", $(this).serialize())
-      .then(function() { 
-        return $.ajax("/tweets", {method: "GET"})
-      })
-      .then( function (tweets) {
-        console.log(tweets[tweets.length - 1])
-        return createTweetElement(tweets[tweets.length - 1]);
-      })
-      .then (function(tweet) {
-        $("#tweets-container").prepend(tweet);
-      });
+        .then(function() {
+          return $.ajax("/tweets", {method: "GET"});
+        })
+        .then(function(tweets) {
+          console.log(tweets[tweets.length - 1]);
+          return createTweetElement(tweets[tweets.length - 1]);
+        })
+        .then(function(tweet) {
+          $("#tweets-container").prepend(tweet);
+        });
     }
-  })
+  });
   loadTweets();
-})
+});
