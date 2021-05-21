@@ -17,7 +17,10 @@ Technologies Used:
 
 
 ## Cool Screenshots!
-
+![mainpage](./docs/char-limit-over-error.png)
+![mainpage](./docs/main-page.png)
+![mainpage](./docs/mobile-page.png)
+![mainpage](./docs/no-input-error.png)
 
 
 ## Getting Started
