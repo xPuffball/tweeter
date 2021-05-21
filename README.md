@@ -17,14 +17,14 @@ Technologies Used:
 
 
 ## Cool Screenshots!
-![mainpage](./docs/main-page.png)
 Tweeter Main Page
-![mainpage](./docs/mobile-page.png)
+![mainpage](./docs/main-page.png)
 Tweeter Mobile Main Page
-![mainpage](./docs/char-limit-over-error.png)
+![mainpage](./docs/mobile-page.png)
 Tweeter Character Limit Notification
-![mainpage](./docs/no-input-error.png)
+![mainpage](./docs/char-limit-over-error.png)
 Tweeter Empty Input Notification
+![mainpage](./docs/no-input-error.png)
 
 
 ## Getting Started
