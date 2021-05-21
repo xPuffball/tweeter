@@ -1,0 +1,11 @@
+#profile {
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url("../images/60-lines.png");
+  background-color: #fefecc;
+  margin-top: 120px;
+}
